@@ -1,0 +1,33 @@
+def add_all(*nums):
+  total = 0
+  for numb in nums:
+    if int == type(numb):
+      total = total + numb
+    else:
+      print(numb, 'is not a numb')
+  print('The total is:', total)
+
+add_all(1,2,3,4,5)
+
+#Note that int's themselves are a class of 'type' so doing numb == type(int) will never be true
+
+def convert_celsius_to_fahrenheit(celcius):
+  fahrenheit = 0
+  fahrenheit = (celcius * 9 / 5) + 32
+  print('Celcius to fahrenheit conversion:', fahrenheit, "\u2109")
+
+convert_celsius_to_fahrenheit(32)
+
+#Note that we can add special characters by using "\u____" and then searching up unicode number of given character
+
+import cmath
+
+def solve_quadratic_eqn(a,b,c):
+  x1,x2 =0,0
+  x1 = -(-b+cmath.sqrt(b**2-4*a*c))/(2*a)
+  x2 = -(-b-cmath.sqrt(b**2-4*a*c))/(2*a)
+  return x1,x2
+
+solve_quadratic_eqn(2,5,4)
+
+#note that we can import math or cmath (complex maths) to use general methods like square roots!
