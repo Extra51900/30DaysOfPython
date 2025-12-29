@@ -41,3 +41,19 @@ def capitalise(clist):
 print(capitalise(['hello','goodbye']))
 
 #note American spelling - captilize
+
+def even_odd(numbs):
+  evens = 0
+  odds = 0
+  for i in range(numbs):
+    if i % 2 == 0:
+      evens = evens + 1
+    else:
+      odds = odds + 1
+  
+  print(f'There are {evens} even numbers')
+  print(f'There are {odds} odd numbers')
+
+even_odd(52)
+
+# No mistakes altough could slightly optimise with odds / even += 1 instead of odds = odds + 1
