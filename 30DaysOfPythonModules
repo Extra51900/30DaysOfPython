@@ -1,9 +1,7 @@
 import string
 import random
-
-
-from random import *
-from string import *
+from random import randint
+from string import ascii_letters, digits
 
 def random6():
   possibleLetters = string.ascii_letters+string.digits
@@ -16,3 +14,23 @@ print(random6())
 
 #Note that you cannot "append" to a string so you need to join it on (+)
 #The len of possible letters can actually go past the entire length of possible letters because the 1st char in the string starts at 0!
+#only import the necessary contents from a module rather than doing the entire *
+
+
+import string
+import random
+from random import randint
+from string import ascii_letters, digits
+
+def user_id_gen_by_user(plength, pnum):
+  possibleLetters = string.ascii_letters+string.digits
+  stringdefault = ''
+  for i in range(pnum):
+    for j in range(plength):
+      stringdefault = stringdefault + (possibleLetters[randint(0,len(possibleLetters)-1)])
+    print(stringdefault)
+    stringdefault = ''
+
+user_id_gen_by_user(10,4)
+
+#A function will return none if there is no 'return' in it so it will by default have an extra none if you do print(function ~~~~)
