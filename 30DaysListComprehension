@@ -1,0 +1,7 @@
+numbers = [i for i in range(10)]
+squares = [i**2 for i in range(10)]
+
+print(numbers)
+print(squares)
+
+#Saves time? Slightly confusing idea for the minute
