@@ -5,3 +5,11 @@ print(numbers)
 print(squares)
 
 #Saves time? Slightly confusing idea for the minute
+
+
+#Alternatively using maps
+def square(x):
+  return x ** 2
+
+squared = map(square, numbers)
+print(list(squared))
