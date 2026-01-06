@@ -4,3 +4,24 @@
 countries_not6 = list(filter(lambda c: len(c) != 6, countries))
   
 print(countries_not6)
+
+#another filter
+
+mixed_list = [
+    42,                 # int
+    3.14,               # float
+    "hello",            # string
+    True,               # boolean
+    None,               # NoneType
+    [1, 2, 3],          # list
+    (4, 5),             # tuple
+    {"a": 1, "b": 2},   # dict
+    {1, 2, 3}           # set
+]
+
+def get_string_lists(item):
+  return type(item) is str
+    
+print(list(filter(get_string_lists, mixed_list)))
+
+#remember to use type on the specific thing we want to check the type of rather than using the type on our 'known' type
