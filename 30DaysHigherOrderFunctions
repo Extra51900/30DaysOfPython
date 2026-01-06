@@ -25,3 +25,21 @@ def get_string_lists(item):
 print(list(filter(get_string_lists, mixed_list)))
 
 #remember to use type on the specific thing we want to check the type of rather than using the type on our 'known' type
+
+import functools
+from functools import reduce
+
+num_list = [i for i in range(10)]
+
+def sum_all(x, y):
+  return int(x) + int(y)
+
+print(int(reduce(sum_all, num_list)))
+
+'''Reduce can also be used from the functools module which similarly has the two input (function, iterable) style
+but instead only leaves one remaining value
+'''
+
+#better yet using a lambda so we don't create large unnessecary functions
+
+print(int(reduce(lambda x,y: int(x)+int(y), num_list)))
