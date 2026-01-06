@@ -13,3 +13,20 @@ def square(x):
 
 squared = map(square, numbers)
 print(list(squared))
+
+
+countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
+
+def land_filter(country):
+  return 'land' in country
+
+
+print(list(filter(land_filter, countries)))
+
+#Filter takes one element from a list at a time and then passes it through the function one at a time
+
+#alternatively using list comprehension
+
+countries_without_land = [c for c in countries if 'land' in c]
+
+
