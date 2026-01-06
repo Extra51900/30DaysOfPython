@@ -1,0 +1,6 @@
+#Utilising filter -> essentially takes one element from the list each time and passes it through a given function
+#Lambda is a no-name function mainly intended for one use purporse in my case
+
+countries_not6 = list(filter(lambda c: len(c) != 6, countries))
+  
+print(countries_not6)
