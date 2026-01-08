@@ -1,0 +1,16 @@
+names = ['Finland', 'Sweden', 'Norway','Denmark','Iceland', 'Estonia','Russia']
+*nordic_countries, Es, Ru = names
+
+'''Quick unpacking -> Essentially python doesn't really know how many strictly will be in nordic countries but it knows to assign the 
+last two within the list as Es and Ru and the remaining will be known as the nordic_countries
+
+try:
+  #code always run in here
+except:
+  #ONLY WHEN SOMETHING GOES WRONG does this run
+else:
+  #Run this when nothing goes wrong
+finally:
+  #always run
+
+  
