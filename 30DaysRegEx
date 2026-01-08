@@ -1,0 +1,25 @@
+import re
+
+tstring = 'I love to code and trade shares'
+
+re.match('i love to code', tstring,re.I)
+
+#Match only looks at the start of the string for matches
+#The re.I is for ignoring upper and lowercase
+#On a no match no message is given but code does not fail so alternatively
+
+#literally any variable but in this instance m used
+if m:
+  print('match found')
+else:
+  print('no match found')
+
+#If a match is found, m is match object but if no match is found, m = None or falsy
+#Alternatively! we can use try except
+
+try:
+
+except AttributeError:
+
+#.group() and .span() essentially pull the specific substring and also .span() for instance can take the range of the given and found match
+# match = re.match() -> match.group() or match.span()
