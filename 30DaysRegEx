@@ -23,3 +23,45 @@ except AttributeError:
 
 #.group() and .span() essentially pull the specific substring and also .span() for instance can take the range of the given and found match
 # match = re.match() -> match.group() or match.span()
+
+
+---
+
+Finding the most common word in a sentence
+
+import re
+paragraph = 'I love teaching. If you do not love teaching what else can you love. I love Python if you do not love something which can give you all the capabilities to develop an application what else can you love'
+
+#change to lowercase for all characters
+lower_paragraph = paragraph.lower()
+
+#turn into list with every word comma seperated
+
+lower_paragraph_words = re.findall(r'\w+', lower_paragraph)
+
+
+def word_counter(wordlist):
+  count = {}
+  for word in wordlist:
+    if word in count:
+      count[word] += 1
+    else:
+      count[word] = 1
+  return count
+
+sorted_word_counter = word_counter(lower_paragraph_words)
+sorted_word_counter = sorted(sorted_word_counter.items(), key= lambda x: x[1])
+print(sorted_word_counter)
+
+# remember that the default parameters for sorted are -> iterable (if dict requires a method) and then a key (function)
+# and finally a display key eg reverse etc
+
+points = ['-12', '-4', '-3', '-1', '0', '4', '8']
+number_points = [int(point) for point in points]
+sorted(number_points, key = lambda x: x)
+distance = number_points[-1] + abs(number_points[0])
+print(distance)
+
+
+#Fairly straightforward. Using list comprehension key here instead of using a for loop and with sorted lists, no method required just iterable
+
