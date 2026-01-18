@@ -1,0 +1,11 @@
+#looking at text files
+
+txt = open('melina_trump_speech.txt', 'r')
+txt_read = txt.read()
+words = (len(txt_read.split()))
+print(f'Number of words: {words}')
+txt.seek(0)
+lines = len(txt.readlines())
+print(f'Number of lines: {lines}')
+
+#read + utilsing the .split() to obtain words (seprated by whitespace by default)
