@@ -9,3 +9,22 @@ lines = len(txt.readlines())
 print(f'Number of lines: {lines}')
 
 #read + utilsing the .split() to obtain words (seprated by whitespace by default)
+
+
+#Json file handling. Confusing but working on it!
+
+import json
+from google.colab import files
+
+def lang_spoke(file):
+  with open(file, 'r') as f:
+    countries_data = json.load(f)
+  languages_spoken = {}
+  if type(countries_data) == dict:
+    for country in countries_data:
+      languages_spoken[countries[name]] = country[population]
+  else:
+    print('File given is not a JSON or dictionary')
+  
+  return(languages_spoken)
+lang_spoke('countries_data.json')
