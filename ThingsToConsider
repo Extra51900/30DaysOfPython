@@ -1,0 +1,16 @@
+#useful ideas
+
+Package
+  -> Module
+    -> Functions
+    -> Variables
+    -> Classes
+
+help(module) gives the functions available to use for a specific import
+
+remember that for a file to be identified as a package, there needs to be a __init__ file existing within the folder
+
+with open('__init__','w'):
+  pass
+
+essentially creates this needed file to turn a folder into a package
