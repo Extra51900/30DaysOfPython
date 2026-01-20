@@ -1,0 +1,53 @@
+#Finding the top 10 words used on a particular website
+
+import requests
+import webbrowser
+import re
+
+
+
+url = 'https://www.gutenberg.org/cache/epub/1513/pg1513-images.html'
+response = requests.get(url)
+text = response.text
+text = text.lower()
+
+
+text_cleaned = re.findall(r'\b[a-zA-Z][a-zA-Z\'-]*[a-zA-Z]\b', text)
+counts = {}
+for word in text_cleaned:
+  if word in counts:
+    counts[word] += 1
+  else:
+    counts[word] = 1
+
+most_common_words = sorted(counts.items(), key = lambda x: x[1], reverse = True)
+print(most_common_words[:19])
+
+
+
+
+#Turning it into a function
+
+def top_words(string):
+  import re
+  import webbrowser
+  import requests
+
+  response = requests.get(string)
+  text = response.text.lower()
+
+  #filter the unnessecary tags from raw html
+  cleaned_website_text = re.sub(r'<.*?>', ' ', text)
+  cleaned_website_text = re.findall(r'\b[a-zA-Z][a-zA-Z\'-]*[a-zA-Z]\b', cleaned_website_text)
+
+  word_count = {}
+  for word in cleaned_website_text:
+    if word in word_count:
+      word_count[word] += 1
+    else:
+      word_count[word] = 1
+
+  most_common_words = sorted(counts.items(), key = lambda x: x[1], reverse = True)
+  return(most_common_words[:10])
+
+  #problem of short words existing persists.
