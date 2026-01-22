@@ -51,3 +51,20 @@ def top_words(string):
   return(most_common_words[:10])
 
   #problem of short words existing persists.
+
+#Average check from an API of cats
+
+import requests
+
+cats_api = 'https://api.thecatapi.com/v1/breeds'
+response = requests.get(cats_api)
+cats_data = response.json()
+print(cats_data)
+
+for cat in cats_data:
+  metric = cat['weight']['metric']
+  low,high = metric.split(' - ')
+  average = (int(low) + int(high)) / 2
+
+print(average)
+
