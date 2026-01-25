@@ -1,1 +1,19 @@
+class PlayerClass():
+    def __init__(self, name, health, speed, luck, stealth):
+        self.name = name
+        self.health = health
+        self.speed = speed
+        self.luck = luck
+        self.stealth = stealth
 
+    def __str__(self):
+        return self.name
+
+    def PlayerClassInfo(self): 
+        print(f'{self} has {self.health} health, {self.speed} speed, {self.luck} luck and {self.stealth} stealth')
+
+assassin = PlayerClass("Assassin", 50, 90, 40, 100)
+assassin.PlayerClassInfo()
+
+#self is always required as a default argument 
+#__init__ means initalize
