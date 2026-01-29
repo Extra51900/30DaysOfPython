@@ -17,3 +17,43 @@ assassin.PlayerClassInfo()
 
 #self is always required as a default argument 
 #__init__ means initalize
+
+
+ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
+
+class Statistics():
+  def __init__(self, numlist):
+    self.numlist = sorted(numlist)
+  def count(self):
+    count = 0
+    for i in self.numlist:
+      count += 1
+    return count
+  def mean(self):
+    mean = 0
+    total = 0 
+    for i in self.numlist:
+      total = i + total
+    mean = total / self.count()
+    return mean
+  def stddev(self):
+    stddev = 0
+    mean = self.mean()
+    for i in self.numlist:
+      y = i - mean
+      stddev = (y**2)/len(self.numlist)
+    return stddev
+
+
+print(data.numlist)
+
+
+data = Statistics(ages)
+data.mean()
+data.stddev()
+
+
+#remember that if refering to a specific variable, have it as self.____ to change it into a instance variable which
+# is accessible allthroughout the class
+#data is the variable name for the specific object created using the statistics variable and when calling a method 
+\
